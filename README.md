@@ -1,2 +1,6 @@
-# ENGG1003Ass1
-Assignment 1 for ENGG1003; encryption &amp; decryption
+# ENGG1003 Assignment 1
+# Encryption and decryption of a string using either a rotation or substitution cipher
+//
+//
+//
+//
