@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+
+  int a = 1, b = 2, c;
+  float x = 3.4, y = 6.2;
+
+  print("%d %d are integers and %f %f are floats", a, b, x, y);
+}
