@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-char *cEncrypt(char *plainText, int key);
+void cEncrypt(char *plainText, int key);
 
-int main() {
+int main(void) {
 
   char x;
   int key = 1; // Single integer encryption key in the range [0,25]
@@ -11,26 +11,30 @@ int main() {
 
 
 // Prints cipher text version of message
-  printf("%s\n", *cEncrypt(plainText, key));
+  cEncrypt(plainText, key);
   return 0;
 }
 
 
 // CAESAR ENCRYPTION
 //
-char *cEncrypt(char *plainText, int key) {
-  char cipherText[100];
+void cEncrypt(char *plainText, int key) {
+  char cipherText;
 
   for (int index = 0; plainText[index] != '\0'; index++) {
     // Converts any lower case letters to upper case
     if ((int)plainText[index] <= 122 && (int)plainText[index] >= 97) {
       plainText[index] -= 32;
-        }
+    }
 
   // Converts each plain text char into a cipher text char in message
     if ((int)plainText[index] >= 65 && (int)plainText[index] <= 90) {
-      cipherText[index] = (char)((int)plainText[index] - 65 + key) % 26 + 65;
+      cipherText = ((int)plainText[index] - 65 + key) % 26 + 65;
+    } else {
+      cipherText = plainText[index];
     }
+
+  printf("%c", cipherText);
   }
-  return *cipherText;
+  printf("\n");
 }
