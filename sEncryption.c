@@ -1,10 +1,19 @@
 #include <stdio.h>
 
+void sEncrypt(char *plainText, char *key);
+
 int main() {
 
   // 26 character substitution key, offset of 2 (begins at C)
   char key[26] = {67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,65,66};
-  char plainText[100] = {"ATTACK AT SUNSET"};
+  char plainText[100] = {"THIS MESSAGE WILL BE ENCRYPTED"};
+
+  sEncrypt(plainText, key);
+  return 0;
+}
+
+void sEncrypt(char *plainText, char *key){
+
   char cipherText;
 
   for(int i = 0; plainText[i] != '\0'; i++){
@@ -19,7 +28,7 @@ int main() {
       cipherText = plainText[i];
     }
 
-    printf("%c", cipherText);
+  printf("%c", cipherText);
   }
-  return 0;
+  printf("\n");
 }

@@ -1,13 +1,11 @@
 #include <stdio.h>
-#include <string.h>
 
 void cEncrypt(char *plainText, int key);
 
 int main(void) {
 
-  char x;
   int key = 1; // Single integer encryption key in the range [0,25]
-  char plainText[100] = {"ATTACK AT SUNRISE"}; // Plain text message to be manipulated
+  char plainText[100] = {"the number eight"}; // Plain text message to be manipulated
 
 
 // Prints cipher text version of message
