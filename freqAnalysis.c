@@ -17,6 +17,8 @@ int main(void) {
 
 void freqAnalysis(char *cipherText) { // Returns frequency of each letter in cipherText in alphabetical order
 
+  int maxFreq = 0;
+  char maxLetter;
   int frequency[26] = {}; // Frequency array of letters in string
   int len = strlen(cipherText); // Gets length of string
 
@@ -29,6 +31,16 @@ void freqAnalysis(char *cipherText) { // Returns frequency of each letter in cip
       }
     }
   }
+
+  // finds letter of string with greatest frequency
+  for(int i = 0; i <= 25; i++){
+    if(frequency[i] > maxFreq){
+      maxFreq = frequency[i];
+      maxLetter = i + 65;
+    }
+  }
+
+  printf("%d %c\n", maxFreq, maxLetter);
 
   for(int n = 0; n <= 25; n++) { // Prints frequency array to console
     printf("%d ", frequency[n]);
