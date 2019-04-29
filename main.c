@@ -22,6 +22,8 @@ when using a substitution cipher. Mode and message should be entered directly af
 should be input directly after the # character. The encrypted or decrypted message will be output to the
 output.txt file.
 
+  NOTE: Input message CANNOT be longer than 1000 characters.
+
 NB: Possible errors with malloc when compiled using dcc. gcc used for compiling throughout writing of code.
 */
 
