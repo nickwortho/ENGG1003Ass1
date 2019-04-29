@@ -1,4 +1,4 @@
-Enter mode:
+Enter mode: 
 
 Enter input message:
 
