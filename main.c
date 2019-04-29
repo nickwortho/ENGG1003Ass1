@@ -165,7 +165,7 @@ int main() {
 
       fp = fopen("output.txt", "w"); //opens output.txt file for writing
       fprintf(fp, "Output message:\n");
-      fputs(substitutionDecrypt(inputMessage, frequencyAnalysis(inputMessage)), fp); // writes outputMessage into output.txt file
+      fputs(substitutionDecrypt(inputMessage, frequencyAnalysisDecryption(inputMessage)), fp); // writes outputMessage into output.txt file
       fclose(fp); // closes output.txt file for writing
       break;
 
@@ -198,7 +198,7 @@ Restrictions: inputMessage must be a string of characters with a maximum length 
 
 char *caesarEncrypt(char inputMessage[], int key) {
 
-  char *outputMessage = malloc(INPUTMAX * sizeof(char));
+  char *outputMessage = malloc(strlen(inputMessage) * sizeof(char));
 
   for (int index = 0; inputMessage[index] != '\0'; index++) {
 
@@ -239,7 +239,7 @@ Restrictions: inputMessage must be a string of characters with a maximum length 
 
 char *caesarDecrypt(char inputMessage[], int key) {
 
-  char *outputMessage = malloc(INPUTMAX * sizeof(char));
+  char *outputMessage = malloc(strlen(inputMessage) * sizeof(char));
 
   for (int index = 0; inputMessage[index] != '\0'; index++) {
     // Converts any lower case letters to upper case
@@ -278,7 +278,7 @@ Restrictions: inputMessage must be a string of characters with a maximum length 
 
 char *substitutionEncrypt(char inputMessage[], char key[]){
 
-  char *outputMessage = malloc(INPUTMAX * sizeof(char));
+  char *outputMessage = malloc(strlen(inputMessage) * sizeof(char));
 
   for(int i = 0; inputMessage[i] != '\0'; i++){
 
@@ -316,7 +316,7 @@ Restrictions: inputMessage must be a string of characters with a maximum length 
 
 char *substitutionDecrypt(char inputMessage[], char key[]){
 
-  char *outputMessage = malloc(INPUTMAX * sizeof(char));
+  char *outputMessage = malloc(strlen(inputMessage) * sizeof(char));
 
   // Loops over each character in the encrypted message
   for(int i = 0; inputMessage[i] != '\0'; i++){
@@ -366,7 +366,7 @@ char *frequencyAnalysisDecryption(char *inputMessage) { // Returns frequency of 
   char alphabet[KEYMAX] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
   char stdFreqDistrib[KEYMAX] = {"ETAOINSHRDLCUMWFGYPBVKJXQZ"};
   int frequency[KEYMAX] = {}; // Frequency array of letters in string
-  char *testKey = malloc(KEYMAX * sizeof(char)); // possible key to be altered from frequency analysis
+  char *testKey = malloc(strlen(inputMessage) * sizeof(char)); // possible key to be altered from frequency analysis
   int len = strlen(inputMessage); // Gets length of string
 
 // counts frequency of each letter in inputMessage
