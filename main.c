@@ -122,6 +122,9 @@ int main() {
       fprintf(fp, "Output message:\n"); // template
       fputs(caesarEncrypt(inputMessage, caesarKey), fp); // writes outputMessage into output.txt file
       fclose(fp); // closes output.txt file for writing
+
+      fputs(caesarEncrypt(inputMessage, caesarKey), stdout); // prints outputMessage to console
+
       break;
 
     }
@@ -132,6 +135,9 @@ int main() {
       fprintf(fp, "Output message:\n"); // template
       fputs(caesarDecrypt(inputMessage, caesarKey), fp); // writes outputMessage into output.txt file
       fclose(fp); // closes output.txt file for writing
+
+      fputs(caesarDecrypt(inputMessage, caesarKey), stdout); // prints outputMessage to console
+
       break;
 
     }
@@ -142,6 +148,9 @@ int main() {
       fprintf(fp, "Output message:\n"); // template
       fputs(substitutionEncrypt(inputMessage, substitutionKey), fp); // writes outputMessage into output.txt file
       fclose(fp); // closes output.txt file for writing
+
+      fputs(substitutionEncrypt(inputMessage, substitutionKey), stdout); // prints outputMessage to console
+
       break;
 
     }
@@ -152,6 +161,9 @@ int main() {
       fprintf(fp, "Output message:\n"); // template
       fputs(substitutionDecrypt(inputMessage, substitutionKey), fp); // writes outputMessage into output.txt file
       fclose(fp); // closes output.txt file for writing
+
+      fputs(substitutionDecrypt(inputMessage, substitutionKey), stdout); // prints outputMessage to console
+
       break;
 
     }
@@ -162,6 +174,9 @@ int main() {
       fprintf(fp, "Output message:\n"); // template
       fputs(substitutionDecrypt(inputMessage, frequencyAnalysisDecryption(inputMessage)), fp); // writes outputMessage into output.txt file
       fclose(fp); // closes output.txt file for writing
+
+      fputs(substitutionDecrypt(inputMessage, frequencyAnalysisDecryption(inputMessage)), stdout); // prints outputMessage to console
+
       break;
 
     }
